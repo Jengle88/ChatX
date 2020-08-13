@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindFriend">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/labelSearchFriend"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Search Friend: "
+            />
+        <EditText
+            android:id="@+id/enterFriend"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/searchResult"
+            android:layout_below="@+id/labelSearchFriend"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:inputType="textWebEmailAddress"
+            android:hint="Enter email your friend..."
+            android:singleLine="true"/>
+        <ImageButton
+            android:id="@+id/search"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@+id/enterFriend"
+            android:layout_alignTop="@+id/enterFriend"
+
+            android:src="@mipmap/search" />
+
+        <TextView
+            android:id="@+id/added"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/enterFriend"
+            android:textStyle="bold"
+            android:text="You added:"/>
+        <ListView
+            android:id="@+id/searchResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_below="@id/added"
+            android:divider="@drawable/orca_composer_divider_horizontal"
+            android:dividerHeight="0dp"
+            android:transcriptMode="alwaysScroll" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

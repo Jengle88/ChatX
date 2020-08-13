@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ChatX</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="authIN">Вы авторизовались</string>
+    <string name="authINagain">Вы снова авторизовались</string>
+    <string name="authOUT">Вы не авторизовались</string>
+    <string name="Error">Произошла ошибка</string>
+</resources>

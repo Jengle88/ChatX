@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <TextView
+        android:id="@+id/message_name"
+        android:layout_width="wrap_content"
+        android:maxWidth="110dp"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="3dp"
+        android:layout_alignParentTop="true" />
+    <TextView
+        android:id="@+id/message_email"
+        android:layout_width="wrap_content"
+        android:maxWidth="110dp"
+        android:singleLine="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/message_name"
+        android:textStyle="normal|bold"/>
+    <TextView
+        android:id="@+id/message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"/>
+    <com.github.library.bubbleview.BubbleTextView
+        android:id="@+id/message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="5dp"
+        android:textColor="#fff"
+        android:padding="10dp"
+        android:layout_below="@+id/message_email"
+        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:angle="6dp"
+        app:arrowWidth="6dp"
+        app:arrowHeight="8dp"
+        app:arrowPosition="8dp"
+        app:arrowLocation="left"
+        app:bubbleColor="#5f6a7d"
+        app:arrowCenter="false"/>
+</RelativeLayout>
