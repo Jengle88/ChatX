@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     private var correctUserEmail = ""
     private var APP_VERSION = ""
     private var checkedVersion = false
-    private var TRUE_APP_VERSION = "1.0.0"
+    private var TRUE_APP_VERSION = "1.0.1"
     private var actualVers = ""
     private val listFriendsEmail = mutableListOf<String>()
     private val listFriendsName = mutableListOf<String>()
