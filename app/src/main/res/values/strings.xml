@@ -5,8 +5,7 @@
     <string name="authINagain">Вы снова авторизовались.</string>
     <string name="authOUT">Вы не авторизовались.</string>
     <string name="Error">Произошла ошибка.</string>
-    <string name="update_local_mess">Найдено необязательное обновление. Хотите перейти на сайт загрузки?</string>
-    <string name="update_important_mess">Найдено важное обновление, без которого доступ в приложение закрыт. Хотите перейти на сайт загрузки?</string>
+    <string name="update_mess">Найдено важное обновление, без которого доступ в приложение закрыт. Хотите перейти на сайт загрузки?</string>
     <string name="update">Найдено обновление!</string>
     <string name="lastVersion">У вас актуальная версия.</string>
     <string name="InternetError">Ошибка соединения.</string>

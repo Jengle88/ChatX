@@ -70,7 +70,6 @@ class MainActivity : AppCompatActivity() {
     private var CHANNEL_ID: String = ""
     private var actualVers = ""
     private var cntPass = 0
-    private var warning_upd = false
     private val listFriendsEmail = mutableListOf<String>()
     private val listFriendsName = mutableListOf<String>()
     private var tablEmailView: MutableMap<String,View> = mutableMapOf()
@@ -233,13 +232,6 @@ class MainActivity : AppCompatActivity() {
     //проверка обновлений
     private fun updateApp()
     {
-        myBase!!.child("update_warning").addListenerForSingleValueEvent(object : ValueEventListener
-        {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                warning_upd = snapshot.getValue(Boolean::class.java)!!
-            }
-            override fun onCancelled(error: DatabaseError) {}
-        })
         myBase!!.child("actual_vers").addListenerForSingleValueEvent(object : ValueEventListener
         {
             override fun onCancelled(error: DatabaseError) {}
@@ -275,20 +267,9 @@ class MainActivity : AppCompatActivity() {
                         })
                     }
                     //проверка важности обновления
-                    if(warning_upd)
-                    {
-                        update_mess.setMessage(string.update_important_mess)
-                        update_mess.setNegativeButton("Позже"){dialog,which -> finish()}
-                        update_mess.setNeutralButton("Пропустить версию"){dialog,which -> finish()}
-                        update_mess.setOnCancelListener { finish() }
-                    }
-                    else {
-                        update_mess.setMessage(string.update_local_mess)
-                        update_mess.setNegativeButton("Позже") { dialog, which -> }
-                        update_mess.setNeutralButton("Пропустить версию") { dialog, which ->
-                            this@MainActivity.openFileOutput("apkVersion", Context.MODE_PRIVATE).write(actualVers.toByteArray())
-                        }
-                    }
+                    update_mess.setMessage(string.update_mess)
+                    update_mess.setNegativeButton("Закрыть приложение"){dialog,which -> finish()}
+                    update_mess.setOnCancelListener { finish() }
                     val dialog: AlertDialog = update_mess.create()
                     dialog.show()
                 }
