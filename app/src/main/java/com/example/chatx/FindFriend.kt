@@ -1,16 +1,14 @@
 package com.example.chatx
 
-import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.chatx.R.string
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -36,6 +34,10 @@ class FindFriend : AppCompatActivity() {
         val resultList:ArrayAdapter<String> = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,returnList)
         //ищем друга в базе и добавляем, если такой есть
         search.setOnClickListener {
+            if(!isOnline(this)) {
+                Toast.makeText(this, string.InternetError, Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             if(enterFriend.isEmailValid())
             {
                 val emailFriend = enterFriend.text.toString().replace('.','_')
